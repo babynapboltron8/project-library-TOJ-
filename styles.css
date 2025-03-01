@@ -1,0 +1,11 @@
+.container-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px; /* Adjust the gap between columns as needed */
+}
+
+.library,
+.books {
+  border: 1px solid #ccc; /* Optional: Add some styling to distinguish the columns */
+  padding: 10px;
+}
