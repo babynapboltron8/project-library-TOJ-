@@ -1,3 +1,18 @@
+import { books } from './data.js';
+
+const listBooks = document.getElementById('list-books');
+
+// Generate book title list items
+const bookTitles = books
+  .map(
+    (book) => `
+      <li>${book.title} - ${book.author}</li>
+    `
+  )
+  .join('');
+
+listBooks.innerHTML = bookTitles;
+
 const myLibrary = [];
 
 function Book(title, author, pages) {
