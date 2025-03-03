@@ -1,8 +1,7 @@
 import { books } from './data.js';
 
+// Generate list dynamically
 const listBooks = document.getElementById('list-books');
-
-// Generate book title list items
 const bookTitles = books
   .map(
     (book) => `
@@ -13,6 +12,27 @@ const bookTitles = books
 
 listBooks.innerHTML = bookTitles;
 
+// Generate form dynamically
+document.addEventListener('DOMContentLoaded', () => {
+  const formContainer = document.getElementById('form-container');
+  const formTemplate = `
+    <form action="">
+      <div class="label-grid">
+        <div>
+          <h2>Submit Your Choosen Books</h2>
+          <label for="fname">Title:</label><br />
+          <input type="text" id="fname" name="fname" value="" /><br />
+          <label for="lname">Authors:</label><br />
+          <input type="text" id="lname" name="lname" value="" /><br /><br />
+        </div>
+      </div>
+      <input type="submit" value="Submit" />
+    </form>
+  `;
+  formContainer.innerHTML = formTemplate;
+});
+
+// Logic here
 const myLibrary = [];
 
 function Book(title, author, pages) {
